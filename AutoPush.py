@@ -12,7 +12,7 @@ def git_push():
     subprocess.run(["git", "commit", "-m", "Automatic commit"])
 
     # Push changes to GitHub
-    subprocess.run(["git", "push", "origin", "master"])  # Assuming master branch
+    subprocess.run(["git", "push", "origin", "main"])  # Assuming master branch
 
 if __name__ == "__main__":
     git_push()
