@@ -1,3 +1,17 @@
 . /usr/share/gazebo/setup.sh
 
 export ROS_MASTER_URI=http://10.4.25.11:11311
+
+roslaunch cob_bringup robot.launch
+
+rosservice call /behavior/setLightRed
+
+rosservice call /base/driver/init
+
+rosservice call /base/driver/recover
+
+rostopic echo /bms/battery_state 
+
+ros2 service call /sound/play cob_srvs/srv/SetString "data: '/u/nhg-yc/Downloads/Hello-2s.mp3'"
+
+alsamixer (only call from head PC: ssh -X 10.4.25.41)
